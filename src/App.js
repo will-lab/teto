@@ -1,25 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Products from "./components/Products";
+import SQL from "./components/SQL";
+
+import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header>
+          <div className="topnav">
+            <a href="/">Home</a>
+            <a href="/products">Produtos</a>
+            <a href="/sql">SQL</a>
+          </div>
         </header>
+        <div>
+          <h1>Teste ReactJS e SQL</h1>
+          <p>Autor: Willian Nascimento Serrano</p>
+          <p>E-mail: will.serrano.job@gmail.com</p>
+        </div>
+        <div className="content">
+          {this.props.children}
+          {/* <Products /> */}
+          {/* <SQL /> */}
+        </div>
       </div>
     );
   }
